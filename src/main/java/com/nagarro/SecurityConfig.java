@@ -35,4 +35,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder(){
         return NoOpPasswordEncoder.getInstance();
     }
+    @Override
+	public void configure(WebSecurity webSecurity) throws Exception {
+		webSecurity.ignoring().antMatchers(HttpMethod.POST, authenticationPath)
+				.antMatchers(HttpMethod.POST, "/forgot")
+				.antMatchers(HttpMethod.POST, "/login")
+				.antMatchers(HttpMethod.OPTIONS, "/**")
+				.and().ignoring()
+				.antMatchers(HttpMethod.GET, "/" 
+				).and().ignoring()
+				.antMatchers("/h2-console/**/**");
+	}
 }
