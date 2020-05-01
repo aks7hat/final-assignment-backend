@@ -21,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService{
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		Registration registration = repo.findByEmail(email);
-		return new org.springframework.security.core.userdetails.User(registration.getEmail(), registration.getPassword(), new ArrayList<>());
+		return new org.springframework.security.core.userdetails.User(registration.getEmail(), repo.getPass(email), new ArrayList<>());
 	}
 
 }

@@ -20,7 +20,7 @@ public interface RegistrationRepository extends JpaRepository<Registration, Inte
 	@Query(value="UPDATE user u SET PASSWORD =:pass WHERE u.EMAIL =:email",nativeQuery=true)
 	void updateUser(@Param("pass") String password, @Param("email") String email);
 	
-//	@Query(value="SELECT u.password fROM user u WHERE u.Id=:id",nativeQuery=true)
-//	String getPass(@Param("id")int id);
+	@Query(value="SELECT u.password fROM user u WHERE u.Email=:email",nativeQuery=true)
+	String getPass(@Param("email")String email);
 
 }
