@@ -24,7 +24,7 @@ public class NotificationService {
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setTo(registration.getEmail());
 		message.setFrom("aks07hataggarwal");
-		message.setSubject("Nagarro Travel portal Registration");
+		message.setSubject("Nagarro Travel portal Information");
 		message.setText("Hi " + registration.getFirstName() + " Your username is " + registration.getEmail() + " and the password is " + registration.getPassword());
 		
 		mail.send(message);
@@ -37,7 +37,7 @@ public class NotificationService {
 		message.setFrom("aks07hataggarwal");
 		message.setSubject("Forgot password Request");
 		String pass = Registration.getPassword();
-		message.setText("Hi you new password is " + pass);
+		message.setText("You have requested your user name and password for the your access to the Nagarro Travel Portal:....Your password is->" + pass);
 		
 		
 		mail.send(message);

@@ -40,7 +40,7 @@ public class Registration {
 	}
 	public static String randomPass(int len) {
 
-		    String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		    String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 		    Random rnd = new Random();
 
 		    StringBuilder sb = new StringBuilder(len);
